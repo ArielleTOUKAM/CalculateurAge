@@ -15,6 +15,24 @@
             <Button Text="Calculer" Command="{Binding CalculerCommand}"/>
             <Label Text="{Binding Resultat}" FontSize="20"
            IsVisible="{Binding ResultatVisible}"/>
+
+            <Label Text="{Binding Statut}" FontSize="16"
+           IsVisible="{Binding ResultatVisible}"/>
+
+            <Label Text="{Binding JoursAvantAnniversaire, StringFormat='Jours avant le prochain anniversaire : {0}'}"
+           FontSize="14"
+           IsVisible="{Binding ResultatVisible}"/>
+
+            <Button Text="Effacer" Command="{Binding EffacerCommand}"/>
+
+            <Label Text="Historique" FontSize="16" FontAttributes="Bold"/>
+            <CollectionView ItemsSource="{Binding Historique}" HeightRequest="150">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding .}" FontSize="12" Padding="0,2"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </VerticalStackLayout>
     </ScrollView>
 
